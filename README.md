@@ -5,7 +5,7 @@ This app contains below sample.
 
 ### Fragment to Fragment transition with Picasso
 - Picasso
-- ViewBiding(require Android Studio 3.6↑）
+- ViewBinding(require Android Studio 3.6↑）
 
 Navigation Component is no used.
 
