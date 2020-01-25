@@ -14,7 +14,11 @@ import com.squareup.picasso.Picasso
 
 class FragmentB : Fragment() {
 
-    private lateinit var binding: FragmentBBinding
+    private var _binding: FragmentBBinding? = null
+    private val binding: FragmentBBinding
+        get() = requireNotNull(_binding) {
+            "ViewBinding is null"
+        }
 
     companion object {
         private const val KEY_IMAGE_RES_ID = "image_res"
@@ -36,7 +40,7 @@ class FragmentB : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBBinding.inflate(inflater, container, false)
+        _binding = FragmentBBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -65,5 +69,10 @@ class FragmentB : Fragment() {
         checkNotNull(args) { "Argument is null" }
         check(args.containsKey(KEY_IMAGE_RES_ID)) { "Argument does't have image res id" }
         return args.getInt(KEY_IMAGE_RES_ID)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

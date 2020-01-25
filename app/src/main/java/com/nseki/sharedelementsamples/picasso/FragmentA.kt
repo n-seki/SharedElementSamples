@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.nseki.sharedelementsamples.Navigator
 import com.nseki.sharedelementsamples.databinding.FragmentABinding
 import com.squareup.picasso.Picasso
 
 class FragmentA : Fragment() {
 
-    private lateinit var binding: FragmentABinding
+    private var _binding: FragmentABinding? = null
+    private val binding: FragmentABinding
+        get() = requireNotNull(_binding) {
+            "ViewBinding is null"
+        }
 
     companion object {
         private const val KEY_IMAGE_RES_ID = "image_res"
@@ -29,7 +32,7 @@ class FragmentA : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentABinding.inflate(inflater, container, false)
+        _binding = FragmentABinding.inflate(inflater, container, false)
         binding.imageA.setOnClickListener {
             (requireActivity() as Navigator).navigateToFragmentB(binding.imageA)
         }
@@ -41,6 +44,11 @@ class FragmentA : Fragment() {
         Picasso.get()
             .load(getImagePath())
             .into(binding.imageA)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     @DrawableRes
