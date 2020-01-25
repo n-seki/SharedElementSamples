@@ -6,4 +6,5 @@
     <string name="picasso_transition_name">image_transaction</string>
     <string name="fragment_a">FragmentA</string>
     <string name="fragment_b">FragmentB</string>
+    <string name="navigation_sample">Navigation Sample</string>
 </resources>

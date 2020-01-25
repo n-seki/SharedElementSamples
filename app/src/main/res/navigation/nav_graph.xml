@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentA">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.nseki.sharedelementsamples.navigation.FragmentA"
+        android:label="@string/fragment_a"
+        tools:layout="@layout/fragment_a" >
+
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+
+        <argument
+            android:name="image_res"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.nseki.sharedelementsamples.navigation.FragmentB"
+        android:label="@string/fragment_b"
+        tools:layout="@layout/fragment_b">
+
+        <argument
+            android:name="image_res"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>

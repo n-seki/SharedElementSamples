@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".picasso.PicassoSampleActivity" />
+        <activity android:name=".navigation.NavigationComponentSampleActivity" />
     </application>
 
 </manifest>

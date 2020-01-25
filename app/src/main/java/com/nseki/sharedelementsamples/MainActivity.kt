@@ -3,6 +3,7 @@ package com.nseki.sharedelementsamples
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nseki.sharedelementsamples.databinding.ActivityMainBinding
+import com.nseki.sharedelementsamples.navigation.NavigationComponentSampleActivity
 import com.nseki.sharedelementsamples.picasso.PicassoSampleActivity
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         binding.picasso.setOnClickListener {
             startActivity(PicassoSampleActivity.newIntent(this))
+        }
+        binding.navigation.setOnClickListener {
+            startActivity(NavigationComponentSampleActivity.newIntent(this))
         }
     }
 }
