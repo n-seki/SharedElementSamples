@@ -1,4 +1,4 @@
-package com.nseki.sharedelementsamples
+package com.nseki.sharedelementsamples.picasso
 
 import android.view.View
 

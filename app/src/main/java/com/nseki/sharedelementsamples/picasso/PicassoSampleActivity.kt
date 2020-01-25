@@ -7,11 +7,11 @@ import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
-import com.nseki.sharedelementsamples.Navigator
 import com.nseki.sharedelementsamples.R
 import com.nseki.sharedelementsamples.databinding.ActivityPicassoBinding
 
-class PicassoSampleActivity : AppCompatActivity(), Navigator {
+class PicassoSampleActivity : AppCompatActivity(),
+    Navigator {
 
     private lateinit var binding: ActivityPicassoBinding
 
